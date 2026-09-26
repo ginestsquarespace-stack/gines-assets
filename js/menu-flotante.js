@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
           el gradiente de --img-fondo por tu imagen, por ejemplo:
           style="--img-fondo:url('img/ginecologia-fondo.jpg')"
         -->
-        <a href="/reservar-cita?tipo=ginecologia"
+        <a href="/cita-extended?tipo=ginecologia"
            class="cita-modal-opcion"
            style="--img-fondo:linear-gradient(150deg, #cbb0d0 0%, #a87ca5 55%, #6b4568 100%);">
           <span class="cita-modal-opcion-icono">
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="cita-modal-opcion-texto">Ginecología</span>
         </a>
 
-        <a href="/reservar-cita?tipo=estetica"
+        <a href="/cita-extended?tipo=estetica"
            class="cita-modal-opcion"
            style="--img-fondo:linear-gradient(150deg, #d8c9a3 0%, #d9af6c 55%, #a87f3e 100%);">
           <span class="cita-modal-opcion-icono">
