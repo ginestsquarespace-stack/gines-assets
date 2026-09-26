@@ -1,0 +1,124 @@
+/* Generado desde style/footer.css — selectores encapsulados en #sq-app */
+/* ==========================================================
+   FOOTER — GINEST
+   Usa las mismas variables que navbar.css:
+   --rosa-fondo, --dorado
+========================================================== */
+
+#sq-app .ginest-footer {
+  background: var(--rosa-fondo-2, #ecdcea);
+  color: var(--texto-principal, #3A3A3A);
+  padding: 64px 24px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+#sq-app .ginest-footer-top {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 0.8fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(58,38,54,0.12);
+}
+
+@media (max-width: 900px) {
+  #sq-app .ginest-footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  #sq-app .ginest-footer-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+#sq-app .ginest-footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--texto-principal, #3A3A3A);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+
+#sq-app .ginest-footer-logo svg {
+  width: 24px;
+  height: 24px;
+  color: var(--dorado, #d9af6c);
+}
+
+#sq-app .ginest-footer-resumen {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--texto-secundario, #6B6B6B);
+  max-width: 300px;
+}
+
+#sq-app .ginest-footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+#sq-app .ginest-footer-social a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(58,38,54,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--texto-principal, #3A3A3A);
+  transition: all 0.2s ease;
+}
+
+#sq-app .ginest-footer-social a:hover {
+  background: var(--dorado, #d9af6c);
+  border-color: var(--dorado, #d9af6c);
+  color: #fff;
+}
+
+#sq-app .ginest-footer-social svg {
+  width: 15px;
+  height: 15px;
+}
+
+#sq-app .ginest-footer-col h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--dorado, #d9af6c);
+  margin-bottom: 16px;
+}
+
+#sq-app .ginest-footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sq-app .ginest-footer-col a {
+  color: var(--texto-secundario, #6B6B6B);
+  text-decoration: none;
+  font-size: 0.87rem;
+  transition: color 0.2s ease;
+}
+
+#sq-app .ginest-footer-col a:hover {
+  color: var(--rosa-boton, #a87ca5);
+}
+
+#sq-app .ginest-footer-bottom {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 22px 0 28px;
+  font-size: 0.78rem;
+  color: var(--texto-secundario, #6B6B6B);
+  text-align: center;
+}

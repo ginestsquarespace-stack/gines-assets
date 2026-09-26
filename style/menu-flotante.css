@@ -1,0 +1,131 @@
+/* Generado desde style/menu-flotante.css — selectores encapsulados en #sq-app */
+/* ==========================================================
+   MENÚ DE CITA — popup centrado (sin botón flotante)
+   Usa las mismas variables que navbar.css:
+   --rosa-fondo, --rosa-fondo-2, --dorado, --texto-nav
+========================================================== */
+
+/* --- Overlay + modal centrado --- */
+#sq-app .cita-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(43, 35, 32, 0.28);
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+#sq-app .cita-modal-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Evita scroll del fondo mientras el modal está abierto */
+body.cita-modal-abierto, #sq-app.cita-modal-abierto {
+  overflow: hidden;
+}
+
+#sq-app .cita-modal {
+  position: relative;
+  width: 520px;
+  max-width: 92vw;
+  background: #fff;
+  border-radius: 26px;
+  padding: 40px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
+
+#sq-app .cita-modal-overlay.hidden .cita-modal {
+  transform: scale(0.92);
+}
+
+#sq-app .cita-modal-cerrar {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #a89e99;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#sq-app .cita-modal-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (min-width: 460px) {
+  #sq-app .cita-modal-opciones { flex-direction: row; }
+}
+
+/* --- Cada opción: pensada para llevar imagen de fondo --- */
+#sq-app .cita-modal-opcion {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 8px;
+  flex: 1;
+  min-height: 200px;
+  padding: 20px;
+  border-radius: 18px;
+  background-color: var(--rosa-fondo, #f3e7f1);
+  background-image: var(--img-fondo, none);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+/* Capa oscura semitransparente para que el texto se lea bien
+   una vez se añada la imagen de fondo (--img-fondo) */
+#sq-app .cita-modal-opcion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(43,31,40,0.55) 100%);
+  transition: background 0.2s ease;
+}
+
+#sq-app .cita-modal-opcion:hover::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(43,31,40,0.68) 100%);
+}
+
+#sq-app .cita-modal-opcion:hover {
+  transform: translateY(-3px);
+}
+
+#sq-app .cita-modal-opcion-icono,
+#sq-app .cita-modal-opcion-texto {
+  position: relative;
+  z-index: 1;
+}
+
+#sq-app .cita-modal-opcion-icono {
+  width: 26px;
+  height: 26px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+#sq-app .cita-modal-opcion-icono svg {
+  width: 100%;
+  height: 100%;
+}
+
+#sq-app .cita-modal-opcion-texto {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+}
