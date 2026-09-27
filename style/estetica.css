@@ -1,0 +1,97 @@
+/* Generado desde style/estetica.css — selectores encapsulados en #sq-app */
+/* ==========================================================
+   ESTÉTICA — estilos específicos (packs / promociones)
+   Reutiliza variables --rosa, --dorado, --rosa-fondo definidas
+   en ginecologia.css / variables globales.
+========================================================== */
+
+#sq-app .estet-precio-inline {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--dorado, #C9A227);
+  font-weight: 600;
+}
+
+#sq-app .estet-packs {
+  padding: 80px 24px;
+  background: var(--rosa-fondo, #fbeeed);
+}
+
+#sq-app .estet-packs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  margin-top: 48px;
+}
+
+#sq-app .estet-pack-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(201,162,39,0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#sq-app .estet-pack-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+}
+
+#sq-app .estet-pack-card--destacado {
+  border: 1.5px solid var(--dorado, #C9A227);
+}
+
+#sq-app .estet-pack-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--rosa, #c97c8a);
+  font-weight: 600;
+}
+
+#sq-app .estet-pack-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: #2b2b2b;
+  margin: 4px 0;
+}
+
+#sq-app .estet-pack-desc {
+  font-size: 0.9rem;
+  color: #555;
+  min-height: 40px;
+}
+
+#sq-app .estet-pack-precio {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 8px 0 4px;
+}
+
+#sq-app .estet-pack-antes {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.95rem;
+}
+
+#sq-app .estet-pack-ahora {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--dorado, #C9A227);
+  font-weight: 700;
+}
+
+#sq-app .estet-packs-nota {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 32px;
+}

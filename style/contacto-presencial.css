@@ -1,0 +1,274 @@
+/* Generado desde style/contacto-presencial.css — selectores encapsulados en #sq-app */
+/* =============================================
+   contacto-presencial.css – Bloque "Contacto presencial" · GINES
+   Destino: style/contacto-presencial.css
+   Paleta consistente con navbar.css / conocenos.css
+============================================= */
+
+#sq-app {
+  --rosa-fondo:       #f3e7f1;
+  --rosa-fondo-2:     #ecdcea;
+  --dorado:           #d9af6c;
+  --rosa-boton:       #a87ca5;
+  --rosa-boton-hover: #8f5f8c;
+  --texto-principal:  #3A3A3A;
+  --texto-secundario: #6B6B6B;
+}
+
+/* ── ANIMACIÓN fade-up (mismo patrón que conocenos.css) ── */
+#sq-app .fade-up {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+#sq-app .fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── CONTENEDOR ── */
+#sq-app .contacto-hero {
+  margin: 8px 0 56px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(150,120,145, 0.10);
+}
+
+#sq-app .contacto-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 800px) {
+  #sq-app .contacto-hero-inner {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: stretch;
+  }
+}
+
+/* ── IMAGEN ── */
+#sq-app .contacto-hero-img {
+  background: linear-gradient(155deg, var(--rosa-fondo) 0%, var(--rosa-fondo-2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 40px;
+}
+#sq-app .contacto-hero-img svg {
+  width: 96px;
+  height: 96px;
+  color: var(--dorado);
+}
+
+@media (min-width: 800px) {
+  #sq-app .contacto-hero-img { min-height: 100%; }
+}
+
+/* ── TEXTO CENTRAL ── */
+#sq-app .contacto-hero-texto {
+  background: #faf3e7;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#sq-app .contacto-hero-badge {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dorado);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+#sq-app .contacto-hero-texto h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: var(--texto-principal);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+#sq-app .contacto-hero-texto p {
+  font-size: 0.95rem;
+  color: var(--texto-secundario);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  max-width: 460px;
+}
+
+/* ── TELÉFONO Y CORREO ── */
+#sq-app .contacto-hero-contacto-fila {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+
+#sq-app .contacto-hero-telefono,
+#sq-app .contacto-hero-correo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#sq-app .contacto-hero-telefono svg,
+#sq-app .contacto-hero-correo svg {
+  width: 20px;
+  height: 20px;
+  color: var(--dorado);
+  flex-shrink: 0;
+}
+#sq-app .contacto-hero-telefono a,
+#sq-app .contacto-hero-correo a {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+#sq-app .contacto-hero-telefono a:hover,
+#sq-app .contacto-hero-correo a:hover { color: var(--dorado); }
+
+/* ── BOTONES ── */
+#sq-app .contacto-hero-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+#sq-app .contacto-btn-primario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--dorado);
+  border: 2px solid var(--dorado);
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 13px 30px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+#sq-app .contacto-btn-primario:hover {
+  background: var(--dorado);
+  color: #faf3e7;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  #sq-app .contacto-hero { border-radius: 18px; }
+  #sq-app .contacto-hero-texto { padding: 28px 22px; }
+  #sq-app .contacto-hero-img { padding: 28px; min-height: 160px; }
+  #sq-app .contacto-hero-img svg { width: 72px; height: 72px; }
+  #sq-app .contacto-hero-botones { flex-direction: column; }
+  #sq-app .contacto-btn-primario { width: 100%; }
+}
+
+/* ── BANNER: Descubre los tratamientos ── */
+/* Ancho completo (es hijo directo de <body>, fuera del contenedor max-w-6xl)
+   + sticky para quedar "detrás" del resto de la página, igual que
+   .parallax-hero en conocenos.css */
+#sq-app .contacto-banner-hero {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Sustituye este degradado por una foto real cuando la tengas:
+     background: url('img/tu-foto.jpg') center/cover no-repeat; */
+  background: linear-gradient(160deg, #cbb0d0 0%, #a87ca5 45%, #6b4568 100%);
+}
+#sq-app .contacto-banner-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(58,38,54, 0.32);
+}
+#sq-app .contacto-banner-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  padding: 48px 24px 64px;
+  color: #faf3e7;
+}
+
+/* Contenido que sube por encima del banner sticky, como .conocenos-contenido */
+#sq-app .contacto-banner-despues {
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  margin-top: -24px;
+  border-radius: 0;
+  box-shadow: 0 -8px 40px rgba(100,72,95, 0.10);
+}
+#sq-app .contacto-banner-overlay h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+#sq-app .contacto-banner-firma {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-top: 4px;
+}
+#sq-app .contacto-banner-overlay p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  opacity: 0.92;
+  margin: 20px 0 28px;
+}
+#sq-app .contacto-banner-btn {
+  display: inline-block;
+  padding: 13px 34px;
+  border: 2px solid #faf3e7;
+  border-radius: 4px;
+  color: #faf3e7;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+#sq-app .contacto-banner-btn:hover {
+  background: #faf3e7;
+  color: var(--rosa-boton);
+}
+
+@media (max-width: 900px) {
+  /* En móvil el efecto "sticky" de parallax no tiene un alto acotado
+     (a diferencia de .parallax-hero en conocenos.css, que usa 100vh),
+     así que el banner se queda fijado detrás del mapa/footer y se
+     "fusiona" visualmente con ellos. Lo desactivamos y dejamos que
+     fluya normal en el documento. */
+  #sq-app .contacto-banner-hero {
+    position: relative;
+    top: auto;
+    z-index: auto;
+  }
+  #sq-app .contacto-banner-despues {
+    margin-top: 0;
+    z-index: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  #sq-app .contacto-banner-hero { min-height: 260px; }
+  #sq-app .contacto-banner-overlay h2 { font-size: 1.5rem; }
+  #sq-app .contacto-banner-firma { font-size: 1.8rem; }
+}

@@ -1,0 +1,172 @@
+/* Generado desde style/navbar.css — selectores encapsulados en #sq-app */
+/* =============================================
+   navbar.css  –  Navbar GINES
+   Sticky + shrink on scroll + hamburguesa
+   Destino: style/navbar.css
+============================================= */
+
+#sq-app {
+  --rosa-fondo:   #f3e7f1;
+  --rosa-fondo-2: #ecdcea;
+  --dorado:       #d9af6c;
+  --texto-nav:    #3A3A3A;
+  --navbar-h:     72px;
+  --navbar-h-sm:  52px;
+}
+
+/* El padding-top evita que el contenido quede debajo del navbar fijo */
+#sq-app {
+  padding-top: var(--navbar-h);
+}
+
+/* -----------------------------------------------
+   NAVBAR – fondo blanco (por defecto)
+----------------------------------------------- */
+#sq-app .navbar-main {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: #faf3e7;
+  box-shadow: 0 2px 12px rgba(150,120,145,0.10);
+  transition: padding 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+#sq-app .navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  transition: padding 0.35s ease;
+}
+
+/* -----------------------------------------------
+   SHRINK al bajar 30px de scroll
+----------------------------------------------- */
+#sq-app .navbar-main.scrolled {
+  background: #f0dfee;  
+  box-shadow: 0 4px 20px rgba(150,120,145,0.18);
+}
+
+#sq-app .navbar-main.scrolled .navbar-inner {
+  padding: 10px 24px;
+}
+
+/* -----------------------------------------------
+   LOGO
+----------------------------------------------- */
+#sq-app .nav-logo {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--dorado);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  transition: font-size 0.35s ease;
+}
+
+#sq-app .navbar-main.scrolled .nav-logo {
+  font-size: 1.1rem;
+}
+
+/* -----------------------------------------------
+   LINKS – color según estado del navbar
+----------------------------------------------- */
+#sq-app .nav-links {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: none;
+  gap: 28px;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  #sq-app .nav-links { display: flex; }
+}
+
+#sq-app .nav-links-left  { justify-content: flex-start; }
+#sq-app .nav-links-right { justify-content: flex-end; }
+
+/* Por defecto (fondo blanco): texto oscuro */
+#sq-app .nav-link {
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--texto-nav);
+  transition: color 0.25s ease;
+}
+#sq-app .nav-link:hover { color: var(--dorado); }
+
+/* Con scroll (fondo rosa): texto en rosa oscuro para distinguirse del blanco */
+#sq-app .navbar-main.scrolled .nav-link {
+  color: #6b4560;
+}
+#sq-app .navbar-main.scrolled .nav-link:hover {
+  color: var(--dorado);
+}
+
+/* -----------------------------------------------
+   HAMBURGUESA (móvil)
+----------------------------------------------- */
+#sq-app .hamburguesa {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: rgba(217,175,108,0.18);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+@media (min-width: 768px) {
+  #sq-app .hamburguesa { display: none; }
+}
+
+#sq-app .hamburguesa:hover { background: rgba(217,175,108,0.32); }
+
+/* Las 3 líneas */
+#sq-app .hamburguesa span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--texto-nav);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animación a X cuando está abierto */
+#sq-app .hamburguesa.abierto span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#sq-app .hamburguesa.abierto span:nth-child(2) { opacity: 0; }
+#sq-app .hamburguesa.abierto span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* -----------------------------------------------
+   MENÚ MÓVIL DESPLEGABLE
+----------------------------------------------- */
+#sq-app .menu-movil {
+  border-top: 1px solid rgba(217,175,108,0.25);
+  padding: 12px 24px 18px;
+}
+
+#sq-app .menu-movil.hidden { display: none; }
+
+#sq-app .menu-movil ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#sq-app .menu-movil .nav-link {
+  font-size: 0.95rem;
+  display: block;
+}
+
+/* En escritorio el menú móvil nunca se muestra (aunque se hubiera abierto
+   en una ventana estrecha y luego se agrande) */
+@media (min-width: 768px) {
+  #sq-app .menu-movil { display: none !important; }
+}
