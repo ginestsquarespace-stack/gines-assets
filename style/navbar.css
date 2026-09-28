@@ -8,7 +8,7 @@
 #sq-app {
   --rosa-fondo:   #f3e7f1;
   --rosa-fondo-2: #ecdcea;
-  --dorado:       #d9af6c;
+  --dorado:       #a17613;
   --texto-nav:    #3A3A3A;
   --navbar-h:     72px;
   --navbar-h-sm:  52px;
@@ -57,17 +57,24 @@
    LOGO
 ----------------------------------------------- */
 #sq-app .nav-logo {
-  font-size: 1.35rem;
-  font-weight: 900;
-  color: var(--dorado);
-  text-decoration: none;
-  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
-  transition: font-size 0.35s ease;
+  text-decoration: none;
 }
 
-#sq-app .navbar-main.scrolled .nav-logo {
-  font-size: 1.1rem;
+/* El margen negativo deja que el logo sobresalga sin aumentar la altura del navbar */
+#sq-app .nav-logo img {
+  display: block;
+  height: 60px;
+  width: auto;
+  margin: -12px 0;
+  transition: height 0.35s ease, margin 0.35s ease;
+}
+
+#sq-app .navbar-main.scrolled .nav-logo img {
+  height: 44px;
+  margin: -6px 0;
 }
 
 /* -----------------------------------------------
@@ -113,7 +120,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  background: rgba(217,175,108,0.18);
+  background: rgba(161,118,19,0.18);
   border: none;
   border-radius: 6px;
   padding: 8px 10px;
@@ -125,7 +132,7 @@
   #sq-app .hamburguesa { display: none; }
 }
 
-#sq-app .hamburguesa:hover { background: rgba(217,175,108,0.32); }
+#sq-app .hamburguesa:hover { background: rgba(161,118,19,0.32); }
 
 /* Las 3 líneas */
 #sq-app .hamburguesa span {
@@ -146,7 +153,7 @@
    MENÚ MÓVIL DESPLEGABLE
 ----------------------------------------------- */
 #sq-app .menu-movil {
-  border-top: 1px solid rgba(217,175,108,0.25);
+  border-top: 1px solid rgba(161,118,19,0.25);
   padding: 12px 24px 18px;
 }
 

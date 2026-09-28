@@ -45,10 +45,10 @@
   margin-bottom: 14px;
 }
 
-#sq-app .ginest-footer-logo svg {
-  width: 24px;
-  height: 24px;
-  color: var(--dorado, #d9af6c);
+#sq-app .ginest-footer-logo img {
+  display: block;
+  width: 96px;
+  height: 96px;
 }
 
 #sq-app .ginest-footer-resumen {
@@ -77,8 +77,8 @@
 }
 
 #sq-app .ginest-footer-social a:hover {
-  background: var(--dorado, #d9af6c);
-  border-color: var(--dorado, #d9af6c);
+  background: var(--dorado, #a17613);
+  border-color: var(--dorado, #a17613);
   color: #fff;
 }
 
@@ -90,7 +90,7 @@
 #sq-app .ginest-footer-col h4 {
   font-family: 'Playfair Display', serif;
   font-size: 1rem;
-  color: var(--dorado, #d9af6c);
+  color: var(--dorado, #a17613);
   margin-bottom: 16px;
 }
 
@@ -123,15 +123,76 @@
   text-align: center;
 }
 
-/* Teléfono y email del footer */
-#sq-app .ginest-footer-contacto {
-  font-size: 0.9rem;
-  line-height: 1.8;
-  margin: 0 0 18px;
+/* ---------- Datos de contacto (dirección, horario, teléfono, email) ---------- */
+#sq-app .ginest-footer-datos {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
 }
-#sq-app .ginest-footer-contacto a {
-  color: inherit;
+#sq-app .ginest-footer-datos li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.87rem;
+  line-height: 1.5;
+  color: var(--texto-secundario, #6B6B6B);
+}
+#sq-app .ginest-footer-datos svg {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  color: var(--dorado, #a17613);
+}
+#sq-app .ginest-footer-col .ginest-footer-datos a {
+  color: var(--texto-principal, #3A3A3A);
+  border-bottom: 1px solid rgba(161, 118, 19, 0.5);
+}
+#sq-app .ginest-footer-col .ginest-footer-datos a:hover { color: var(--rosa-boton, #a87ca5); }
+
+/* ---------- Botón Reservar cita ---------- */
+#sq-app .ginest-footer-col .ginest-footer-cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 26px;
+  border-radius: 999px;
+  background: var(--rosa-boton, #a87ca5);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: background 0.2s ease;
+}
+#sq-app .ginest-footer-col .ginest-footer-cta:hover {
+  background: var(--rosa-boton-hover, #8f5f8c);
+  color: #fff;
+}
+
+/* ---------- Barra inferior: © + enlaces legales ---------- */
+#sq-app .ginest-footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  text-align: left;
+}
+#sq-app .ginest-footer-bottom p { margin: 0; }
+#sq-app .ginest-footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+}
+#sq-app .ginest-footer-legal a {
+  color: var(--texto-secundario, #6B6B6B);
   text-decoration: none;
-  border-bottom: 1px solid rgba(217, 175, 108, 0.5);
 }
-#sq-app .ginest-footer-contacto a:hover { color: var(--dorado, #d9af6c); }
+#sq-app .ginest-footer-legal a:hover { color: var(--rosa-boton, #a87ca5); }
+
+@media (max-width: 560px) {
+  #sq-app .ginest-footer-bottom { justify-content: center; text-align: center; }
+  #sq-app .ginest-footer-legal { justify-content: center; }
+}

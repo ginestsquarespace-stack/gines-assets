@@ -7,7 +7,7 @@
 #sq-app {
   --rosa-fondo:       #f3e7f1;
   --rosa-fondo-2:     #ecdcea;
-  --dorado:           #d9af6c;
+  --dorado:           #a17613;
   --texto-principal:  #3A3A3A;
   --texto-secundario: #6B6B6B;
   /* SVG de líneas onduladas reutilizable */
@@ -23,7 +23,10 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  background: linear-gradient(155deg, var(--rosa-fondo) 0%, var(--rosa-fondo-2) 100%);
+  /* Velo rosado sobre la foto para que el texto oscuro siga siendo legible */
+  background:
+    linear-gradient(155deg, rgba(243,231,241,0.78) 0%, rgba(236,220,234,0.70) 100%),
+    url("https://cdn.jsdelivr.net/gh/ginestsquarespace-stack/gines-assets@main/img/ginest-recepcion.webp") center / cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +41,7 @@
   position: absolute;
   width: 520px; height: 520px;
   border-radius: 50%;
-  background: rgba(217,175,108,0.07);
+  background: rgba(161,118,19,0.07);
   top: -80px; right: -100px;
   pointer-events: none;
 }
@@ -47,7 +50,7 @@
   position: absolute;
   width: 320px; height: 320px;
   border-radius: 50%;
-  background: rgba(217,175,108,0.05);
+  background: rgba(161,118,19,0.05);
   bottom: -60px; left: -60px;
   pointer-events: none;
 }

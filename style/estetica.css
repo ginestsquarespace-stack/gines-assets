@@ -9,13 +9,13 @@
   display: inline-block;
   margin-top: 6px;
   font-size: 0.85rem;
-  color: var(--dorado, #C9A227);
+  color: var(--dorado, #a17613);
   font-weight: 600;
 }
 
 #sq-app .estet-packs {
   padding: 80px 24px;
-  background: var(--rosa-fondo, #fbeeed);
+  background: #fff;
 }
 
 #sq-app .estet-packs-grid {
@@ -45,7 +45,7 @@
 }
 
 #sq-app .estet-pack-card--destacado {
-  border: 1.5px solid var(--dorado, #C9A227);
+  border: 1.5px solid var(--dorado, #a17613);
 }
 
 #sq-app .estet-pack-tag {
@@ -85,13 +85,8 @@
 #sq-app .estet-pack-ahora {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
-  color: var(--dorado, #C9A227);
+  color: var(--dorado, #a17613);
   font-weight: 700;
 }
 
-#sq-app .estet-packs-nota {
-  text-align: center;
-  font-size: 0.8rem;
-  color: #888;
-  margin-top: 32px;
-}
+
