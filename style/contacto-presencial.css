@@ -273,3 +273,10 @@
   #sq-app .contacto-banner-overlay h2 { font-size: 1.5rem; }
   #sq-app .contacto-banner-firma { font-size: 1.8rem; }
 }
+
+/* El banner es sticky (z-index 0) y en ventanas bajas seguía pegado
+   encima del footer al llegar al final. El footer va por encima. */
+#sq-app #footer {
+  position: relative;
+  z-index: 10;
+}

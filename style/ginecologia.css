@@ -362,3 +362,11 @@
   font-weight: 600;
   text-decoration: none;
 }
+
+/* Escritorio: el widget se amplía para llenar todo el bloque blanco.
+   Va dentro de un iframe, así que se escala con zoom (el contenido
+   interno de Doctoralia no se puede estirar desde fuera). */
+@media (min-width: 800px) {
+  #sq-app .doctoralia-embed { padding: 20px; }
+  #sq-app .doctoralia-embed iframe { zoom: 1.45; }
+}
