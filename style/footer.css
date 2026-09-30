@@ -73,13 +73,11 @@
   align-items: center;
   justify-content: center;
   color: var(--texto-principal, #3A3A3A);
-  transition: all 0.2s ease;
+  transition: transform 0.25s ease;
 }
 
 #sq-app .ginest-footer-social a:hover {
-  background: var(--dorado, #a17613);
-  border-color: var(--dorado, #a17613);
-  color: #fff;
+  transform: scale(1.18);
 }
 
 #sq-app .ginest-footer-social svg {

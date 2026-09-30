@@ -110,17 +110,18 @@
   grid-template-columns: 1fr;
 }
 
+/* El widget de Doctoralia ocupa la columna ancha para que se lea bien */
 @media (min-width: 800px) {
-  #sq-app .ginec-doctoralia-inner { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  #sq-app .ginec-doctoralia-inner { grid-template-columns: 3fr 2fr; align-items: stretch; }
 }
 
 #sq-app .doctoralia-embed {
-  background: linear-gradient(155deg, var(--rosa-fondo) 0%, var(--rosa-fondo-2) 100%);
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 260px;
-  padding: 32px;
+  min-height: 360px;
+  padding: 36px 40px;
 }
 
 #sq-app .doctoralia-placeholder {
@@ -154,7 +155,6 @@
   color: var(--texto-secundario);
   font-size: 0.95rem;
   line-height: 1.7;
-  margin-bottom: 26px;
   max-width: 460px;
 }
 
@@ -210,7 +210,7 @@
   }
 }
 
-/* Panel de imagen (degradado + icono de momento, listo para foto real) */
+/* Panel de imagen (patrón geométrico de momento, listo para foto real) */
 #sq-app .ginec-split-imagen {
   order: 1;
   position: relative;
@@ -221,21 +221,28 @@
   background-size: cover;
   background-position: center;
 }
-#sq-app .ginec-split-imagen--menopausia {
-  background: linear-gradient(150deg, #cbb0d0 0%, #a87ca5 55%, #6b4568 100%);
-}
-#sq-app .ginec-split-imagen--trastornos {
-  background: linear-gradient(150deg, #e6d9ea 0%, #c8ac93 55%, #d9af6c 100%);
+/* Patrones geométricos que cubren todo el panel (como las ondas de Conócenos).
+   Compartidos por Ginecología y Estética:
+   cruces y valla metálica (X). */
+#sq-app .ginec-split-imagen {
+  background-color: #faf3e7;
+  background-position: 0 0;
+  background-repeat: repeat;
 }
 #sq-app .ginec-split-imagen--laser {
-  background: linear-gradient(150deg, #d8c9a3 0%, #d9af6c 55%, #a87f3e 100%);
+  background-color: #faf3e7;
+  background-image: url("https://cdn.jsdelivr.net/gh/ginestsquarespace-stack/gines-assets@main/img/patron-cruces.svg");
+  background-size: 60px 60px;
 }
-#sq-app .ginec-split-icono {
-  color: rgba(250,243,231,0.85);
+#sq-app .ginec-split-imagen--trastornos {
+  background-color: #f5eee0;
+  background-image: url("https://cdn.jsdelivr.net/gh/ginestsquarespace-stack/gines-assets@main/img/patron-valla.svg");
+  background-size: 40px 40px;
 }
-#sq-app .ginec-split-icono svg {
-  width: 84px;
-  height: 84px;
+#sq-app .ginec-split-imagen--menopausia {
+  background-color: #faf3e7;
+  background-image: url("https://cdn.jsdelivr.net/gh/ginestsquarespace-stack/gines-assets@main/img/patron-cruces.svg");
+  background-size: 60px 60px;
 }
 
 /* Panel de contenido (lista/acordeón) */
@@ -334,7 +341,6 @@
   #sq-app .ginec-doctoralia-texto { padding: 28px 22px; }
   #sq-app .doctoralia-embed { padding: 24px; min-height: 180px; }
   #sq-app .ginec-split-imagen { min-height: 200px; }
-  #sq-app .ginec-split-icono svg { width: 60px; height: 60px; }
   #sq-app .ginec-split-contenido { padding: 40px 22px; }
 }
 

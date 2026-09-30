@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60" fill="none" stroke-width="2.5" stroke-linejoin="miter">
+<!-- Cruces griegas al tresbolillo, colores alternos dorado/rosa -->
+<defs>
+  <path id="c" d="M-4 -12H4V-4H12V4H4V12H-4V4H-12V-4H-4Z"/>
+</defs>
+<use xlink:href="#c" x="15" y="15" stroke="#a17613" opacity=".45"/>
+<use xlink:href="#c" x="45" y="45" stroke="#a87ca5" opacity=".55"/>
+<g stroke="#a17613" opacity=".35" stroke-linecap="round">
+  <path d="M45 13v4M43 15h4"/>
+</g>
+<g stroke="#a87ca5" opacity=".45" stroke-linecap="round">
+  <path d="M15 43v4M13 45h4"/>
+</g>
+</svg>

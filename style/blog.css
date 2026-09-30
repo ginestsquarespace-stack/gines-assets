@@ -56,6 +56,11 @@
   display: block;
 }
 
+/* Encuadre centrado en la cara para fotos horizontales */
+#sq-app .blog-img-cara {
+  object-position: center 35%;
+}
+
 #sq-app .blog-contenido {
   display: flex;
   flex-direction: column;

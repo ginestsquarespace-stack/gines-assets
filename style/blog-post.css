@@ -234,6 +234,20 @@
   margin: 28px 0;
 }
 
+/* Imágenes con foto real: proporción 3:2 para que no se deformen */
+#sq-app .post-img-foto {
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: none;
+}
+#sq-app .post-img-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ── ETIQUETAS ── */
 #sq-app .post-tags {
   display: flex;

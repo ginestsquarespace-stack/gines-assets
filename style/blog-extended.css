@@ -117,6 +117,28 @@
   justify-content: center;
   font-size: 4rem;
 }
+/* Destacado con foto real: la imagen rellena la columna sin deformarse */
+#sq-app .destacado-img.destacado-img-foto {
+  position: relative;
+  overflow: hidden;
+  background: none;
+  min-height: 340px;
+}
+/* Con foto, la imagen gana protagonismo y el texto ocupa menos */
+#sq-app .articulo-destacado:has(.destacado-img-foto) {
+  grid-template-columns: 3fr 2fr;
+}
+#sq-app .articulo-destacado:has(.destacado-img-foto) .destacado-body {
+  padding: 28px 26px;
+}
+#sq-app .destacado-img-foto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
 #sq-app .destacado-body {
   padding: 36px 32px;
   display: flex;
@@ -203,6 +225,20 @@
 #sq-app .card-img.c4 { background: linear-gradient(135deg, #f5f0e8, #e8d8c4); }
 #sq-app .card-img.c5 { background: linear-gradient(135deg, #f0e8f5, #d8c4e8); }
 #sq-app .card-img.c6 { background: linear-gradient(135deg, #f5e8e8, #e8c4c4); }
+
+/* Tarjeta con foto real: proporción 3:2 para que la imagen no se deforme */
+#sq-app .card-img.card-img-foto {
+  height: auto;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+#sq-app .card-img-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
 #sq-app .card-body {
   padding: 24px 22px 26px;
   flex: 1;
@@ -436,6 +472,9 @@
   #sq-app .blog-layout { padding: 0 20px; gap: 24px; }
   #sq-app .articulo-destacado { grid-template-columns: 1fr; }
   #sq-app .destacado-img { min-height: 160px; }
+  #sq-app .articulo-destacado:has(.destacado-img-foto) { grid-template-columns: 1fr; }
+  #sq-app .destacado-img.destacado-img-foto { min-height: 0; aspect-ratio: 16 / 10; }
+  #sq-app .articulo-destacado:has(.destacado-img-foto) .destacado-body { padding: 20px 22px 22px; }
   #sq-app .articulos-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {
@@ -445,11 +484,13 @@
   #sq-app .blog-hero p { font-size: .85rem; }
   #sq-app .blog-layout { padding: 0 16px; margin: 28px auto; }
   #sq-app .destacado-img { min-height: 120px; font-size: 2.2rem; }
+  #sq-app .destacado-img.destacado-img-foto { min-height: 0; }
   #sq-app .destacado-body { padding: 20px 18px; }
   #sq-app .destacado-body h2 { font-size: 1.1rem; }
   #sq-app .destacado-body p { font-size: .82rem; margin-bottom: 12px; }
   #sq-app .articulos-grid { grid-template-columns: 1fr; gap: 16px; }
   #sq-app .card-img { height: 120px; font-size: 2rem; }
+  #sq-app .card-img.card-img-foto { height: auto; }
   #sq-app .card-body { padding: 16px; }
   #sq-app .card-body h3 { font-size: .95rem; }
   #sq-app .card-body p { font-size: .8rem; }

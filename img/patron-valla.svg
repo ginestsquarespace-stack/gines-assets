@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke-width="2.5" stroke-linecap="square">
+<!-- Valla metálica: rejilla de X con remaches en los cruces -->
+<path d="M-2 -2L42 42" stroke="#a17613" opacity=".4"/>
+<path d="M42 -2L-2 42" stroke="#a87ca5" opacity=".5"/>
+<g stroke="none">
+  <rect x="16.5" y="16.5" width="7" height="7" transform="rotate(45 20 20)" fill="#a17613" opacity=".55"/>
+  <rect x="-3.5" y="-3.5" width="7" height="7" transform="rotate(45 0 0)" fill="#a87ca5" opacity=".6"/>
+  <rect x="36.5" y="-3.5" width="7" height="7" transform="rotate(45 40 0)" fill="#a87ca5" opacity=".6"/>
+  <rect x="-3.5" y="36.5" width="7" height="7" transform="rotate(45 0 40)" fill="#a87ca5" opacity=".6"/>
+  <rect x="36.5" y="36.5" width="7" height="7" transform="rotate(45 40 40)" fill="#a87ca5" opacity=".6"/>
+</g>
+</svg>
