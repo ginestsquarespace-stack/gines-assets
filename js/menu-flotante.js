@@ -12,6 +12,13 @@
  * página. Solo incluye este script (y su CSS) una vez por página.
  */
 
+// -----------------------------------------------------------
+// 0) Reservas de Ginecología funcional
+//    👉 Cambia a true para volver a aceptar reservas de ginecología.
+// -----------------------------------------------------------
+window.RESERVAS_GINECOLOGIA_ACTIVAS = false;
+window.AVISO_GINECOLOGIA = 'Ahora mismo no podemos atender reservas en Ginecología funcional.';
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // -----------------------------------------------------------
@@ -31,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
           style="--img-fondo:url('img/ginecologia-fondo.jpg')"
         -->
         <a href="/cita-extended?tipo=ginecologia"
-           class="cita-modal-opcion"
+           class="cita-modal-opcion${window.RESERVAS_GINECOLOGIA_ACTIVAS ? '' : ' cita-modal-opcion--desactivada'}"
            style="--img-fondo:linear-gradient(150deg, #cbb0d0 0%, #a87ca5 55%, #6b4568 100%);">
           <span class="cita-modal-opcion-icono">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -40,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
               <path d="M12 20c4.2 0 8.1-2.6 9.7-7.2-2.4-.6-4.9 0-6.9 1.6"/>
             </svg>
           </span>
-          <span class="cita-modal-opcion-texto">Ginecología</span>
+          <span class="cita-modal-opcion-texto">Ginecología funcional</span>
+          ${window.RESERVAS_GINECOLOGIA_ACTIVAS ? '' : '<span class="cita-modal-opcion-estado">No disponible</span>'}
         </a>
 
         <a href="/cita-extended?tipo=estetica"
@@ -52,27 +60,50 @@ document.addEventListener('DOMContentLoaded', () => {
               <path d="M13.733,24.252c-0.469,0-0.847,0.123-1.078,0.222c-0.34-0.122-0.686-0.184-1.028-0.184c-1.386,0-2.264,1.004-2.301,1.046c-0.16,0.188-0.16,0.465,0.001,0.652c1.012,1.174,2.115,1.769,3.28,1.769c1.966,0,3.322-1.716,3.379-1.789c0.15-0.193,0.139-0.467-0.027-0.646C15.141,24.438,14.297,24.252,13.733,24.252z M12.607,26.758c-0.742,0-1.476-0.356-2.186-1.059c0.418-0.297,1.245-0.577,2.056-0.22c0.146,0.065,0.323,0.052,0.463-0.031c0.003-0.002,0.332-0.196,0.793-0.196c0.402,0,0.79,0.146,1.154,0.435C14.458,26.102,13.618,26.758,12.607,26.758z"/>
             </svg>
           </span>
-          <span class="cita-modal-opcion-texto">Estética</span>
+          <span class="cita-modal-opcion-texto">Medicina estética</span>
         </a>
       </div>
+
+      <p id="cita-modal-aviso" class="cita-modal-aviso hidden" role="alert"></p>
     </div>
   `;
   (document.querySelector('.sq-app')||document.body).appendChild(overlay);
+  const aviso = document.getElementById('cita-modal-aviso');
 
   // -----------------------------------------------------------
   // 2) Abrir / cerrar
   // -----------------------------------------------------------
   function abrirModal() {
+    aviso.classList.add('hidden');
     overlay.classList.remove('hidden');
     document.body.classList.add('cita-modal-abierto');
   }
   // Para poder abrirlo desde otros scripts (p. ej. cita-extended.js sin ?tipo=)
   window.abrirModalCita = abrirModal;
 
+  // Abre el popup mostrando el aviso de que ginecología no admite reservas
+  function mostrarAvisoGinecologia() {
+    abrirModal();
+    aviso.textContent = window.AVISO_GINECOLOGIA;
+    aviso.classList.remove('hidden');
+  }
+  window.mostrarAvisoGinecologia = mostrarAvisoGinecologia;
+
   function cerrarModal() {
     overlay.classList.add('hidden');
     document.body.classList.remove('cita-modal-abierto');
   }
+
+  // Reservas de ginecología desactivadas: cualquier enlace a
+  // ?tipo=ginecologia muestra el aviso en lugar de abrir el formulario
+  document.addEventListener('click', (e) => {
+    if (window.RESERVAS_GINECOLOGIA_ACTIVAS) return;
+    const enlace = e.target.closest('a[href*="tipo=ginecologia"]');
+    if (enlace) {
+      e.preventDefault();
+      mostrarAvisoGinecologia();
+    }
+  });
 
   // Cualquier elemento con data-abrir-cita abre el popup
   document.addEventListener('click', (e) => {
@@ -97,16 +128,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // -----------------------------------------------------------
 // 3) Emails con asunto según la página
-//    - Página de Ginecología (o formulario ?tipo=ginecologia) -> "Cita de Ginecología"
-//    - Página de Estética   (o formulario ?tipo=estetica)     -> "Cita de Estética"
+//    - Página de Ginecología (o formulario ?tipo=ginecologia) -> "Cita de Ginecología funcional"
+//    - Página de Estética   (o formulario ?tipo=estetica)     -> "Cita de Medicina estética"
 //    - Cualquier otra página                                  -> "Consulta"
 //    Funciona también con los enlaces que se cargan después (navbar, footer, ubicación).
 // -----------------------------------------------------------
 function asuntoEmailSegunPagina() {
   const ruta = decodeURIComponent(window.location.pathname).toLowerCase();
   const tipo = new URLSearchParams(window.location.search).get('tipo');
-  if (tipo === 'ginecologia' || ruta.includes('ginecologia')) return 'Cita de Ginecología';
-  if (tipo === 'estetica' || ruta.includes('estetica')) return 'Cita de Estética';
+  if (tipo === 'ginecologia' || ruta.includes('ginecologia')) return 'Cita de Ginecología funcional';
+  if (tipo === 'estetica' || ruta.includes('estetica')) return 'Cita de Medicina estética';
   return 'Consulta';
 }
 

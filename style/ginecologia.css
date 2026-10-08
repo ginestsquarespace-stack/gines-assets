@@ -370,3 +370,21 @@
   #sq-app .doctoralia-embed { padding: 20px; }
   #sq-app .doctoralia-embed iframe { zoom: 1.45; }
 }
+
+/* La tarjeta crece con la columna blanca hasta llenarla */
+@media (min-width: 950px)  { #sq-app .doctoralia-embed iframe { zoom: 1.75; } }
+@media (min-width: 1100px) { #sq-app .doctoralia-embed iframe { zoom: 2.05; } }
+@media (min-width: 1200px) { #sq-app .doctoralia-embed iframe { zoom: 2.25; } }
+
+/* ── AVISO: reservas de ginecología no disponibles ── */
+#sq-app .ginec-aviso-reservas {
+  background: var(--rosa-fondo-2);
+  border-bottom: 1px solid var(--borde);
+  padding: 16px 20px;
+  text-align: center;
+}
+#sq-app .ginec-aviso-reservas p {
+  margin: 0;
+  color: var(--texto-principal);
+  font-weight: 500;
+}

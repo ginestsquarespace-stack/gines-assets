@@ -129,3 +129,31 @@ body.cita-modal-abierto, #sq-app.cita-modal-abierto {
   font-weight: 700;
   color: #fff;
 }
+
+/* --- Opción sin reservas disponibles (p. ej. Ginecología funcional) --- */
+#sq-app .cita-modal-opcion--desactivada {
+  filter: grayscale(0.6);
+  opacity: 0.75;
+}
+#sq-app .cita-modal-opcion--desactivada:hover { transform: none; }
+
+#sq-app .cita-modal-opcion-estado {
+  position: relative;
+  z-index: 1;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+#sq-app .cita-modal-aviso {
+  margin: 20px 0 0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--rosa-fondo, #f3e7f1);
+  color: #6b4568;
+  font-size: 0.95rem;
+  text-align: center;
+}
+#sq-app .cita-modal-aviso.hidden { display: none; }

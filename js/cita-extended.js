@@ -46,8 +46,8 @@ const SERVICIOS = {
 };
 
 const TITULOS = {
-  ginecologia: { badge: "Ginecología", titulo: "Reserva tu consulta de Ginecología" },
-  estetica:    { badge: "Estética",    titulo: "Reserva tu consulta de Estética" }
+  ginecologia: { badge: "Ginecología funcional", titulo: "Reserva tu consulta de Ginecología funcional" },
+  estetica:    { badge: "Medicina estética", titulo: "Reserva tu consulta de Medicina estética" }
 };
 
 // -----------------------------------------------------------
@@ -58,8 +58,8 @@ const TITULOS = {
 //    solicitud de cita sin pago.
 // -----------------------------------------------------------
 const STRIPE_PAYMENT_LINKS = {
-  ginecologia: "https://buy.stripe.com/PEGA_AQUI_TU_ENLACE_GINECOLOGIA",
-  estetica:    "https://buy.stripe.com/PEGA_AQUI_TU_ENLACE_ESTETICA"
+  ginecologia: "https://buy.stripe.com/test_9B67sK5hQ0GI1FWgV297G00",
+  estetica:    "https://buy.stripe.com/test_9B67sK5hQ0GI1FWgV297G00"
 };
 
 // -----------------------------------------------------------
@@ -68,7 +68,7 @@ const STRIPE_PAYMENT_LINKS = {
 //    La PRIMERA reserva envía a este correo un email de activación:
 //    hay que pulsar "Activate Form" una sola vez.
 // -----------------------------------------------------------
-const EMAIL_RESERVAS = "info@ginest.es";
+const EMAIL_RESERVAS = "ginest.gst@gmail.com";
 const FORM_ENDPOINT = "https://formsubmit.co/ajax/" + EMAIL_RESERVAS;
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -98,11 +98,22 @@ document.addEventListener("DOMContentLoaded", async () => {
   const motivoSelect = document.getElementById("motivo-select");
 
   if (!tipo || !SERVICIOS[tipo]) {
-    // Sin tipo válido -> se abre la ventana flotante para elegir Ginecología o Estética
+    // Sin tipo válido -> se abre la ventana flotante para elegir Ginecología funcional o Medicina estética
     formWrap.classList.add("hidden");
     const intro = document.querySelector(".reserva-hero .ginec-intro");
-    if (intro) intro.textContent = "Elige si tu consulta es de Ginecología o de Estética.";
+    if (intro) intro.textContent = "Elige si tu consulta es de Ginecología funcional o de Medicina estética.";
     if (typeof window.abrirModalCita === "function") window.abrirModalCita();
+    return;
+  }
+
+  // Reservas de ginecología desactivadas (ver js/menu-flotante.js)
+  if (tipo === "ginecologia" && window.RESERVAS_GINECOLOGIA_ACTIVAS === false) {
+    formWrap.classList.add("hidden");
+    badge.textContent = TITULOS[tipo].badge;
+    titulo.textContent = "Reservas no disponibles";
+    const intro = document.querySelector(".reserva-hero .ginec-intro");
+    if (intro) intro.textContent = window.AVISO_GINECOLOGIA;
+    if (typeof window.mostrarAvisoGinecologia === "function") window.mostrarAvisoGinecologia();
     return;
   }
 
