@@ -222,6 +222,7 @@
 #sq-app .doctoras-grid {
   display: grid;
   grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;        /* todas las tarjetas igual de altas aunque tengan menos texto */
   gap: 40px;
   max-width: 900px;
   margin: 0 auto;
