@@ -16,7 +16,7 @@
 // 0) Reservas de Ginecología funcional
 //    👉 Cambia a true para volver a aceptar reservas de ginecología.
 // -----------------------------------------------------------
-window.RESERVAS_GINECOLOGIA_ACTIVAS = false;
+window.RESERVAS_GINECOLOGIA_ACTIVAS = true;
 window.AVISO_GINECOLOGIA = 'Ahora mismo no podemos atender reservas en Ginecología funcional.';
 
 document.addEventListener('DOMContentLoaded', () => {
